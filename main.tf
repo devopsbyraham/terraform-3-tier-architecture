@@ -135,10 +135,10 @@ resource "aws_route_table_association" "b" {
 
 #Create EC2 Instance
 resource "aws_instance" "webserver1" {
-  ami                    = "ami-0d5eff06f840b45e9"
+  ami                    = "ami-0d5effjyothsna06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "KOPSK8S"
+  key_name               = "jyothsna"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-1.id
   user_data              = "${file("apache.sh")}"
@@ -152,7 +152,7 @@ resource "aws_instance" "webserver2" {
   ami                    = "ami-0d5eff06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "KOPSK8S"
+  key_name               = "jyothsna"
   vpc_security_group_ids = [aws_security_group.webserver-sg.id]
   subnet_id              = aws_subnet.web-subnet-2.id
   user_data              = "${file("apache.sh")}"
@@ -167,7 +167,7 @@ resource "aws_instance" "appserver1" {
   ami                    = "ami-0d5eff06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1a"
-  key_name               = "KOPSK8S"
+  key_name               = "jyothsna"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-1.id
   tags = {
@@ -179,7 +179,7 @@ resource "aws_instance" "appserver2" {
   ami                    = "ami-0d5eff06f840b45e9"
   instance_type          = "t2.micro"
   availability_zone      = "us-east-1b"
-  key_name               = "KOPSK8S"
+  key_name               = "jyothsna"
   vpc_security_group_ids = [aws_security_group.appserver-sg.id]
   subnet_id              = aws_subnet.application-subnet-2.id
 
